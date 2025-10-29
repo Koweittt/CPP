@@ -1,0 +1,9 @@
+# SSH keys
+*.txt
+*.pub
+id_*
+
+# Private keys
+*.pem
+*.key
+*.ppk
