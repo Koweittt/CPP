@@ -2,8 +2,9 @@ CC		= c++
 CFLAGS	= -Wall -Wextra -Werror 
 CVersion= -std=c++98
 
-NAME	= megaphone
-SRC		= megaphone.cpp
+NAME	= Account
+SRC		= Account.cpp \
+		  tests.cpp
 OBJ		= $(SRC:.cpp=.o)
 
 all: $(NAME)

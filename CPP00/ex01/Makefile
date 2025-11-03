@@ -2,8 +2,10 @@ CC		= c++
 CFLAGS	= -Wall -Wextra -Werror 
 CVersion= -std=c++98
 
-NAME	= megaphone
-SRC		= megaphone.cpp
+NAME	= phonebook
+SRC		= srcs/phonebook.cpp \
+		  srcs/contact.cpp \
+		  srcs/main.cpp
 OBJ		= $(SRC:.cpp=.o)
 
 all: $(NAME)
