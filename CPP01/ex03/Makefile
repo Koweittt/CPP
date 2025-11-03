@@ -2,8 +2,11 @@ CC		= c++
 CFLAGS	= -Wall -Wextra -Werror 
 CVersion= -std=c++98
 
-NAME	= exec
-SRC		= main.cpp
+NAME	= weapon
+SRC		= src/main.cpp \
+		  src/HumanA.cpp \
+		  src/HumanB.cpp \
+		  src/Weapon.cpp
 OBJ		= $(SRC:.cpp=.o)
 
 all: $(NAME)
