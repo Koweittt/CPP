@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: koweit <koweit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 08:47:04 by koweit            #+#    #+#             */
-/*   Updated: 2025/11/03 12:05:44 by koweit           ###   ########.fr       */
+/*   Created: 2025/11/03 08:46:59 by koweit            #+#    #+#             */
+/*   Updated: 2025/11/03 12:22:35 by koweit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Zombie.hpp"
 
-Zombie::Zombie(void)
+int main (void)
 {
-    std::cout << "A zombie has been created" << std::endl;
-}
+    Zombie *z;
+    int number = 10;
 
-Zombie::~Zombie(void)
-{
-    std::cout << "A zombie has been destroyed" << std::endl;
-}
+    z = zombieHorde(number, "jack");
 
-void Zombie::setName(std::string name)
-{
-    _name = name;
-}
-
-void Zombie::announce(void)
-{
-    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    for (int i = 0; i < number; i++)
+        z[i].announce();
+        
+    delete[] z;
+    return (0);
 }

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: koweit <koweit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 08:47:04 by koweit            #+#    #+#             */
-/*   Updated: 2025/11/03 12:05:44 by koweit           ###   ########.fr       */
+/*   Created: 2025/11/03 12:05:01 by koweit            #+#    #+#             */
+/*   Updated: 2025/11/03 12:22:05 by koweit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Zombie.hpp"
 
-Zombie::Zombie(void)
+Zombie *zombieHorde(int N, std::string name)
 {
-    std::cout << "A zombie has been created" << std::endl;
-}
+    Zombie *array;
 
-Zombie::~Zombie(void)
-{
-    std::cout << "A zombie has been destroyed" << std::endl;
-}
-
-void Zombie::setName(std::string name)
-{
-    _name = name;
-}
-
-void Zombie::announce(void)
-{
-    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    array = new Zombie[N];
+    if (!array)
+    {
+        std::cout << "Allocation Problem" << std::endl;
+        return (NULL);
+    }
+    for (int i = 0; i < N; i++)
+    {
+        array[i].setName(name);
+    }
+    return (array);
 }
